@@ -11,11 +11,24 @@ namespace MyFirstWPFApp.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        private IList<bool>? _genderTypes = new List<bool>() { true, false};
+        public IList<bool>? GenderTypes
+        {
+            get => _genderTypes;
+        }
+
         private IList<Person>? _people;
         public IList<Person>? People
         {
             get => _people;
             set => SetProperty(ref _people, value);
+        }
+
+        private Person? _selectedPerson;
+        public Person? SelectedPerson
+        {
+            get => _selectedPerson;
+            set => SetProperty(ref _selectedPerson, value);
         }
 
         public MainWindowViewModel()
